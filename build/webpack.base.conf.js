@@ -33,7 +33,7 @@ const originalConfig = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', 'less'],
+    extensions: ['.js', '.vue', '.json', '.less'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
@@ -105,5 +105,8 @@ const originalConfig = {
 const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig
 
 module.exports = vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui']
+  options: {},
+  plugins: [{
+    name: 'vux-ui'
+  }]
 })
